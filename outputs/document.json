@@ -1,0 +1,13 @@
+{
+  "title": "NIST SP 800-63B: Digital Identity Guidelines — Authentication and Lifecycle Management",
+  "edition": "June 2017; updates through 2020-03-02; withdrawal cover added 2025",
+  "status": "Withdrawn 2025-08-01; historical corpus only",
+  "source_url": "https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-63b.pdf",
+  "sha256": "ccfce7510a1267933f912d023306c6e7d485f21be63d271108b61aad6139127e",
+  "total_pdf_pages": 80,
+  "indexed_pdf_pages": [
+    12,
+    80
+  ],
+  "page_number_note": "Physical PDF page = printed Arabic page + 11 for body pages."
+}

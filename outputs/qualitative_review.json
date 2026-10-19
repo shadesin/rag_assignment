@@ -1,0 +1,210 @@
+{
+  "review_type": "Manual inspection by coding assistant of actual final outputs; student must verify and write their own report.",
+  "answers_sha256": "905782966024afc1bfba93785699342d3b2aefce347fad044f94d8e7e0ef1945",
+  "important_limitations": [
+    "Critical-phrase labels are not exhaustive passage-relevance labels.",
+    "Stress-test cases were selected after exploratory retrieval; do not generalize success rates.",
+    "The small local answer model can ignore evidence, confuse numeric rules, and omit requested citations.",
+    "A correct yes/no answer without source support is not a verified factual improvement."
+  ],
+  "recommended_cases_to_inspect_first": [
+    "q11",
+    "q02",
+    "q28"
+  ],
+  "cases": [
+    {
+      "query_id": "q28",
+      "baseline_rank": 5,
+      "reranked_rank": 1,
+      "outcome": "better_supported_answer",
+      "baseline_issue": "The yes/no conclusion is correct, but its prohibition is inferred from general password predictability; no baseline passage states the specific first-pet restriction.",
+      "reranked_outcome": "The answer identifies the explicit SHALL NOT restriction in p025_c01. It does not provide the requested chunk-ID citation.",
+      "source_check": "PDF page 25, section 5.1.1.2. The first-pet prompt is explicitly prohibited.",
+      "counts_as_clear_evidence_improvement": true,
+      "citation_diagnostics": {
+        "baseline": {
+          "cited_chunk_ids": [],
+          "missing_chunk_id_citation": true,
+          "ids_not_in_supplied_context": []
+        },
+        "reranked": {
+          "cited_chunk_ids": [],
+          "missing_chunk_id_citation": true,
+          "ids_not_in_supplied_context": []
+        }
+      }
+    },
+    {
+      "query_id": "q02",
+      "baseline_rank": 7,
+      "reranked_rank": 3,
+      "outcome": "answer_improved_with_qualification",
+      "baseline_issue": "Incorrectly claims changes after compromise are not mandated and invents a security rationale; the baseline context contains neither the periodic-change rule nor its compromise exception.",
+      "reranked_outcome": "Correctly rejects arbitrary monthly changes and recognizes compromise as an exception. It could state more clearly that evidence of compromise requires a change (SHALL), rather than merely permits one. Its user-request qualification appears in p065_c01.",
+      "source_check": "PDF page 25, p025_c03: SHOULD NOT arbitrary periodic changes; SHALL force change on evidence of compromise. p065_c01 is a separate relevant usability passage.",
+      "counts_as_clear_evidence_improvement": true,
+      "citation_diagnostics": {
+        "baseline": {
+          "cited_chunk_ids": [],
+          "missing_chunk_id_citation": true,
+          "ids_not_in_supplied_context": []
+        },
+        "reranked": {
+          "cited_chunk_ids": [],
+          "missing_chunk_id_citation": true,
+          "ids_not_in_supplied_context": []
+        }
+      }
+    },
+    {
+      "query_id": "q11",
+      "baseline_rank": 6,
+      "reranked_rank": 1,
+      "outcome": "answer_repaired",
+      "baseline_issue": "Omits the ten-minute deadline and mixes the out-of-band transaction with unrelated periodic session reauthentication. The baseline Top 3 do not contain the deadline.",
+      "reranked_outcome": "Gives the correct ten-minute limit with the supporting citation p029_c03.",
+      "source_check": "PDF page 29, section 5.1.3.2: invalid if not completed within 10 minutes.",
+      "counts_as_clear_evidence_improvement": true,
+      "citation_diagnostics": {
+        "baseline": {
+          "cited_chunk_ids": [
+            "p029_c02",
+            "p021_c01"
+          ],
+          "missing_chunk_id_citation": false,
+          "ids_not_in_supplied_context": []
+        },
+        "reranked": {
+          "cited_chunk_ids": [
+            "p029_c03"
+          ],
+          "missing_chunk_id_citation": false,
+          "ids_not_in_supplied_context": []
+        }
+      }
+    },
+    {
+      "query_id": "q06",
+      "baseline_rank": 6,
+      "reranked_rank": 1,
+      "outcome": "retrieval_improved_but_answer_wrong",
+      "baseline_issue": "Says spaces can be collapsed but invents a phrase-integrity criterion and omits the numeric condition. Appendix discussion mentions repeated spaces without the full normative condition.",
+      "reranked_outcome": "The correct rule is now in p024_c03, but the answer incorrectly calls 64 characters the minimum. The required post-collapse minimum is 8; 64 is a length the verifier SHOULD permit, not require.",
+      "source_check": "PDF page 24, section 5.1.1.2. Useful evidence moved 6 to 1, but the local LLM failed to use it correctly.",
+      "counts_as_clear_evidence_improvement": false,
+      "citation_diagnostics": {
+        "baseline": {
+          "cited_chunk_ids": [],
+          "missing_chunk_id_citation": true,
+          "ids_not_in_supplied_context": []
+        },
+        "reranked": {
+          "cited_chunk_ids": [],
+          "missing_chunk_id_citation": true,
+          "ids_not_in_supplied_context": []
+        }
+      }
+    },
+    {
+      "query_id": "q13",
+      "baseline_rank": 5,
+      "reranked_rank": 2,
+      "outcome": "retrieval_improved_without_answer_repair",
+      "baseline_issue": "Does not give the biometric-specific limit and incorrectly implies the general rule excludes fingerprint scans by definition.",
+      "reranked_outcome": "Despite p038_c02 entering the context, the answer still discusses the generic 100 limit, omits 5/10, and contradicts itself about applicability.",
+      "source_check": "PDF page 38: no more than 5 consecutive failures, or 10 with qualifying PAD, followed by specified delay or disabling with an available alternate factor. General rule on PDF page 36 allows authenticator-specific exceptions.",
+      "counts_as_clear_evidence_improvement": false,
+      "citation_diagnostics": {
+        "baseline": {
+          "cited_chunk_ids": [
+            "p036_c04"
+          ],
+          "missing_chunk_id_citation": false,
+          "ids_not_in_supplied_context": []
+        },
+        "reranked": {
+          "cited_chunk_ids": [
+            "p036_c04"
+          ],
+          "missing_chunk_id_citation": false,
+          "ids_not_in_supplied_context": []
+        }
+      }
+    },
+    {
+      "query_id": "q29",
+      "baseline_rank": 4,
+      "reranked_rank": 1,
+      "outcome": "retrieval_improved_without_answer_repair",
+      "baseline_issue": "Omits the eight-character condition and gives an unsupported reason linking permitted normalization to a prohibition on truncation.",
+      "reranked_outcome": "Confuses Unicode NFKC/NFKD normalization with the specific repeated-space allowance. Still omits the eight-character condition, although p024_c03 contains it.",
+      "source_check": "PDF page 24 treats space collapsing, truncation, and Unicode normalization as distinct rules.",
+      "counts_as_clear_evidence_improvement": false,
+      "citation_diagnostics": {
+        "baseline": {
+          "cited_chunk_ids": [
+            "p079_c02"
+          ],
+          "missing_chunk_id_citation": false,
+          "ids_not_in_supplied_context": []
+        },
+        "reranked": {
+          "cited_chunk_ids": [],
+          "missing_chunk_id_citation": true,
+          "ids_not_in_supplied_context": []
+        }
+      }
+    },
+    {
+      "query_id": "q25",
+      "baseline_rank": 1,
+      "reranked_rank": 5,
+      "outcome": "reranking_regression",
+      "baseline_issue": "No substantive issue for the asked distinction: it cites p037_c03 and explains why biometrics are not secrets.",
+      "reranked_outcome": "The relevant chunk drops from rank 1 to 5. The yes/no conclusion remains right, but the rationale becomes unsupported by the selected passages and makes broad claims that biometrics cannot be changed.",
+      "source_check": "PDF page 37, section 5.2.3: biometric characteristics do not constitute secrets and can be obtained without the subject knowledge.",
+      "counts_as_clear_evidence_improvement": false,
+      "citation_diagnostics": {
+        "baseline": {
+          "cited_chunk_ids": [
+            "p037_c03"
+          ],
+          "missing_chunk_id_citation": false,
+          "ids_not_in_supplied_context": []
+        },
+        "reranked": {
+          "cited_chunk_ids": [],
+          "missing_chunk_id_citation": true,
+          "ids_not_in_supplied_context": []
+        }
+      }
+    },
+    {
+      "query_id": "q09",
+      "baseline_rank": 3,
+      "reranked_rank": 1,
+      "outcome": "already_retrieved_control",
+      "baseline_issue": "The no conclusion is plausible but justified using an unrelated device-unlocking rule in p020_c05, despite the correct code-display passage already being rank 3.",
+      "reranked_outcome": "Uses p028_c04 and correctly identifies the SHOULD NOT display guidance. Its final phrasing is more absolute than SHOULD, and it omits the separate SHOULD indicate receipt clause.",
+      "source_check": "PDF page 28, section 5.1.3.1: SHOULD NOT display secret while locked; SHOULD indicate receipt. This is a 3-to-1 reordering control, not a rank-4-to-10 promotion.",
+      "counts_as_clear_evidence_improvement": false,
+      "citation_diagnostics": {
+        "baseline": {
+          "cited_chunk_ids": [
+            "p020_c05"
+          ],
+          "missing_chunk_id_citation": false,
+          "ids_not_in_supplied_context": []
+        },
+        "reranked": {
+          "cited_chunk_ids": [
+            "p028_c04"
+          ],
+          "missing_chunk_id_citation": false,
+          "ids_not_in_supplied_context": []
+        }
+      }
+    }
+  ]
+}

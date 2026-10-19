@@ -1,0 +1,12 @@
+{
+  "candidate_reuse": true,
+  "prompt_template_shared": true,
+  "source_phrases_verified": true,
+  "corpus_frozen": true,
+  "embedding_normalization": true,
+  "no_answer_truncation": true,
+  "timing_arithmetic": true,
+  "exploratory_queries": 32,
+  "selected_cases": 8,
+  "critical_evidence_promotions": 6
+}

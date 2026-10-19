@@ -1,0 +1,12 @@
+.venv/
+.cache/
+__pycache__/
+.ipynb_checkpoints/
+.env
+.env.*
+!.env.example
+.DS_Store
+outputs/index.faiss
+outputs/embeddings.npy
+outputs/*.log
+*.tmp

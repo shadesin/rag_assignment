@@ -1,0 +1,546 @@
+[
+  {
+    "query": {
+      "query_id": "q28",
+      "category": "keyword_trap",
+      "question": "Can users be asked for their first pet's name when selecting a login password?",
+      "gold_pdf_page": 25,
+      "critical_phrase": "SHALL NOT prompt subscribers to use specific types",
+      "gold_chunk_ids": [
+        "p025_c01"
+      ],
+      "expected_answer": "No prompting for specific personal information such as first-pet names."
+    },
+    "rank_summary": {
+      "query_id": "q28",
+      "category": "keyword_trap",
+      "question": "Can users be asked for their first pet's name when selecting a login password?",
+      "gold_pdf_page": 25,
+      "baseline_rank": 5,
+      "reranked_rank": 1,
+      "promoted_into_top3": true,
+      "demoted_out_of_top3": false,
+      "missing_from_top10": false
+    },
+    "baseline": {
+      "answer": "No, users cannot be asked for their first pet's name when selecting a login password according to the passage. The text states that \"users' password choices are very predictable\" and mentions examples like \"Password1!\" and \"Password1!\", indicating that common patterns exist and suggest avoiding certain inputs. Therefore, asking for personal details like a pet's name could lead to predictable passwords being chosen.",
+      "generation_ms": 3763.3979580000414,
+      "input_tokens": 780,
+      "output_tokens": 79,
+      "hit_token_limit": false,
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a careful reading assistant. Answer only from the provided historical NIST passages.\nAnswer the specific question in 2 or 3 sentences, at most 80 words. Start with the direct answer.\nUse the specific rule for the question rather than an unrelated general rule. Include any relevant\nexception, numeric condition, or prohibition. Preserve the meaning of SHALL, SHOULD, and MAY.\nCite at least one supporting passage using its exact chunk ID in square brackets.\nIf the passages do not answer the question, say the supplied passages are insufficient.\nDo not invent facts or describe unrelated procedures."
+        },
+        {
+          "role": "user",
+          "content": "Passages:\n[p079_c03] PDF page 79 (printed page 68):\nBut a properly hashed password would not be sent intact to a database in any case, so such precautions are unnecessary. Users should also be able to include space characters to allow the use of phrases. Spaces themselves, however, add little to the complexity of passwords and may introduce usability issues (e.g., the undetected use of two spaces rather than one), so it may be beneficial to remove repeated spaces in typed passwords prior to verification. Users’ password choices are very predictable, so attackers are likely to guess passwords that have been successful in the past. These include dictionary words and passwords from previous breaches, such as the “Password1!” example above. For this reason, it is recommended that passwords chosen by users be compared against a “black list” of unacceptable passwords. This list should include passwords from previous breach corpuses, dictionary words, and specific words (such as the name of the service itself) that users are likely to choose.\n\n[p079_c02] PDF page 79 (printed page 68):\nResearch has shown, however, that users respond in very predictable ways to the requirements imposed by composition rules [Policies]. For example, a user that might have chosen “password” as their password would be relatively likely to choose “Password1” if required to include an uppercase letter and a number, or “Password1!” if a symbol is also required. Users also express frustration when attempts to create complex passwords are rejected by online services. Many services reject passwords with spaces and various special characters. In some cases, the special characters that are not accepted might be an effort to avoid attacks like SQL injection that depend on those characters. But a properly hashed password would not be sent intact to a database in any case, so such precautions are unnecessary. Users should also be able to include space characters to allow the use of phrases.\n\n[p078_c01] PDF page 78 (printed page 67):\nAppendix A—Strength of Memorized Secrets This appendix is informative. Throughout this appendix, the word “password” is used for ease of discussion. Where used, it should be interpreted to include passphrases and PINs as well as passwords. A.1 Introduction Despite widespread frustration with the use of passwords from both a usability and security standpoint, they remain a very widely used form of authentication [Persistence]. Humans, however, have only a limited ability to memorize complex, arbitrary secrets, so they often choose passwords that can be easily guessed. To address the resultant security concerns, online services have introduced rules in an effort to increase the complexity of these memorized secrets. The most notable form of these is composition rules, which require the user to choose passwords constructed using a mix of character types, such as at least one digit, uppercase letter, and symbol. However, analyses of breached password databases reveal that the benefit of such rules is not nearly as significant as initially thought [Policies], although the impact on usability and memorability is severe.\n\nQuestion: Can users be asked for their first pet's name when selecting a login password?\nAnswer:"
+        }
+      ],
+      "context_ids": [
+        "p079_c03",
+        "p079_c02",
+        "p078_c01"
+      ]
+    },
+    "reranked": {
+      "answer": "No, according to the passage, users shall not be prompted to use specific types of information when choosing memorized secrets, including asking about their first pet's name. The passage states \"Verifiers SHALL NOT prompt subscribers to use specific types of information\" when choosing memorized secrets.",
+      "generation_ms": 2939.523249999638,
+      "input_tokens": 753,
+      "output_tokens": 57,
+      "hit_token_limit": false,
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a careful reading assistant. Answer only from the provided historical NIST passages.\nAnswer the specific question in 2 or 3 sentences, at most 80 words. Start with the direct answer.\nUse the specific rule for the question rather than an unrelated general rule. Include any relevant\nexception, numeric condition, or prohibition. Preserve the meaning of SHALL, SHOULD, and MAY.\nCite at least one supporting passage using its exact chunk ID in square brackets.\nIf the passages do not answer the question, say the supplied passages are insufficient.\nDo not invent facts or describe unrelated procedures."
+        },
+        {
+          "role": "user",
+          "content": "Passages:\n[p025_c01] PDF page 25 (printed page 14):\nMemorized secrets that are randomly chosen by the CSP (e.g., at enrollment) or by the verifier (e.g., when a user requests a new PIN) SHALL be at least 6 characters in length and SHALL be generated using an approved random bit generator [SP 800-90Ar1]. Memorized secret verifiers SHALL NOT permit the subscriber to store a “hint” that is accessible to an unauthenticated claimant. Verifiers SHALL NOT prompt subscribers to use specific types of information (e.g., “What was the name of your first pet?”) when choosing memorized secrets. When processing requests to establish and change memorized secrets, verifiers SHALL compare the prospective secrets against a list that contains values known to be commonly-used, expected, or compromised. For example, the list MAY include, but is not limited to: • Passwords obtained from previous breach corpuses. • Dictionary words.\n\n[p079_c02] PDF page 79 (printed page 68):\nResearch has shown, however, that users respond in very predictable ways to the requirements imposed by composition rules [Policies]. For example, a user that might have chosen “password” as their password would be relatively likely to choose “Password1” if required to include an uppercase letter and a number, or “Password1!” if a symbol is also required. Users also express frustration when attempts to create complex passwords are rejected by online services. Many services reject passwords with spaces and various special characters. In some cases, the special characters that are not accepted might be an effort to avoid attacks like SQL injection that depend on those characters. But a properly hashed password would not be sent intact to a database in any case, so such precautions are unnecessary. Users should also be able to include space characters to allow the use of phrases.\n\n[p025_c02] PDF page 25 (printed page 14):\nFor example, the list MAY include, but is not limited to: • Passwords obtained from previous breach corpuses. • Dictionary words. • Repetitive or sequential characters (e.g. ‘aaaaaa’, ‘1234abcd’). • Context-specific words, such as the name of the service, the username, and derivatives thereof. If the chosen secret is found in the list, the CSP or verifier SHALL advise the subscriber that they need to select a different secret, SHALL provide the reason for rejection, and SHALL require the subscriber to choose a different value. Verifiers SHOULD offer guidance to the subscriber, such as a password-strength meter [Meters], to assist the user in choosing a strong memorized secret. This is particularly important following the rejection of a memorized secret on the above list as it discourages trivial modification of listed (and likely very weak) memorized secrets [Blacklists].\n\nQuestion: Can users be asked for their first pet's name when selecting a login password?\nAnswer:"
+        }
+      ],
+      "context_ids": [
+        "p025_c01",
+        "p079_c02",
+        "p025_c02"
+      ]
+    }
+  },
+  {
+    "query": {
+      "query_id": "q02",
+      "category": "exceptions",
+      "question": "Do users need to change their password every month even when it has not leaked?",
+      "gold_pdf_page": 25,
+      "critical_phrase": "However, verifiers SHALL force a change",
+      "gold_chunk_ids": [
+        "p025_c03"
+      ],
+      "expected_answer": "No arbitrary periodic changes; force a change when compromise is evidenced."
+    },
+    "rank_summary": {
+      "query_id": "q02",
+      "category": "exceptions",
+      "question": "Do users need to change their password every month even when it has not leaked?",
+      "gold_pdf_page": 25,
+      "baseline_rank": 7,
+      "reranked_rank": 3,
+      "promoted_into_top3": true,
+      "demoted_out_of_top3": false,
+      "missing_from_top10": false
+    },
+    "baseline": {
+      "answer": "No, according to the passage, users typically do not need to change their password every month even if it has been compromised. The text states \"The ability of the attacker to determine one or more users' passwords depends on the way in which the password is stored,\" implying that once a password is known, changing it immediately after a leak does not significantly enhance security. Therefore, while it may be prudent to change passwords regularly, especially due to other factors like expiration dates, immediate changes following a compromise are not mandated.",
+      "generation_ms": 4298.868249999941,
+      "input_tokens": 682,
+      "output_tokens": 104,
+      "hit_token_limit": false,
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a careful reading assistant. Answer only from the provided historical NIST passages.\nAnswer the specific question in 2 or 3 sentences, at most 80 words. Start with the direct answer.\nUse the specific rule for the question rather than an unrelated general rule. Include any relevant\nexception, numeric condition, or prohibition. Preserve the meaning of SHALL, SHOULD, and MAY.\nCite at least one supporting passage using its exact chunk ID in square brackets.\nIf the passages do not answer the question, say the supplied passages are insufficient.\nDo not invent facts or describe unrelated procedures."
+        },
+        {
+          "role": "user",
+          "content": "Passages:\n[p064_c02] PDF page 64 (printed page 53):\n10.2.1 Memorized Secrets Typical Usage Users manually input the memorized secret (commonly referred to as a password or PIN). Usability considerations for typical usage include: • Memorability of the memorized secret. o The likelihood of recall failure increases as there are more items for users to remember. With fewer memorized secrets, users can more easily recall the specific memorized secret needed for a particular RP. o The memory burden is greater for a less frequently used password. • User experience during entry of the memorized secret. o Support copy and paste functionality in fields for entering memorized secrets, including passphrases. Intermittent Events Usability considerations for intermittent events include: • When users create and change memorized secrets: o Clearly communicate information on how to create and change memorized secrets. o Clearly communicate memorized secret requirements, as specified in Section 5.1.1. o Allow at least 64 characters in length to support the use of passphrases.\n\n[p078_c04] PDF page 78 (printed page 67):\nOffline attacks are sometimes possible when one or more hashed passwords is obtained by the attacker through a database breach. The ability of the attacker to determine one or more users’ passwords depends on the way in which the password is stored. Commonly, passwords are salted\n\n[p078_c01] PDF page 78 (printed page 67):\nAppendix A—Strength of Memorized Secrets This appendix is informative. Throughout this appendix, the word “password” is used for ease of discussion. Where used, it should be interpreted to include passphrases and PINs as well as passwords. A.1 Introduction Despite widespread frustration with the use of passwords from both a usability and security standpoint, they remain a very widely used form of authentication [Persistence]. Humans, however, have only a limited ability to memorize complex, arbitrary secrets, so they often choose passwords that can be easily guessed. To address the resultant security concerns, online services have introduced rules in an effort to increase the complexity of these memorized secrets. The most notable form of these is composition rules, which require the user to choose passwords constructed using a mix of character types, such as at least one digit, uppercase letter, and symbol. However, analyses of breached password databases reveal that the benefit of such rules is not nearly as significant as initially thought [Policies], although the impact on usability and memorability is severe.\n\nQuestion: Do users need to change their password every month even when it has not leaked?\nAnswer:"
+        }
+      ],
+      "context_ids": [
+        "p064_c02",
+        "p078_c04",
+        "p078_c01"
+      ]
+    },
+    "reranked": {
+      "answer": "No, according to the passage, users should not be required to change their memorized secrets arbitrarily unless there is a user request or evidence of authenticator compromise. Therefore, changing passwords monthly without such justification would violate this principle.",
+      "generation_ms": 2493.129833999774,
+      "input_tokens": 801,
+      "output_tokens": 46,
+      "hit_token_limit": false,
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a careful reading assistant. Answer only from the provided historical NIST passages.\nAnswer the specific question in 2 or 3 sentences, at most 80 words. Start with the direct answer.\nUse the specific rule for the question rather than an unrelated general rule. Include any relevant\nexception, numeric condition, or prohibition. Preserve the meaning of SHALL, SHOULD, and MAY.\nCite at least one supporting passage using its exact chunk ID in square brackets.\nIf the passages do not answer the question, say the supplied passages are insufficient.\nDo not invent facts or describe unrelated procedures."
+        },
+        {
+          "role": "user",
+          "content": "Passages:\n[p065_c01] PDF page 65 (printed page 54):\no Do not require that memorized secrets be changed arbitrarily (e.g., periodically) unless there is a user request or evidence of authenticator compromise. (See Section 5.1.1 for additional information). • Provide clear, meaningful and actionable feedback when chosen passwords are rejected (e.g., when it appears on a “black list” of unacceptable passwords or has been used previously). 10.2.2 Look-Up Secrets Typical Usage Users use the authenticator — printed or electronic — to look up the appropriate secret(s) needed to respond to a verifier’s prompt. For example, a user may be asked to provide a specific subset of the numeric or character strings printed on a card in table format. Usability considerations for typical usage include: • User experience during entry of look-up secrets. o Consider the prompts’ complexities and sizes. The larger the subset of secrets a user is prompted to look up, the greater the usability implications.\n\n[p064_c02] PDF page 64 (printed page 53):\n10.2.1 Memorized Secrets Typical Usage Users manually input the memorized secret (commonly referred to as a password or PIN). Usability considerations for typical usage include: • Memorability of the memorized secret. o The likelihood of recall failure increases as there are more items for users to remember. With fewer memorized secrets, users can more easily recall the specific memorized secret needed for a particular RP. o The memory burden is greater for a less frequently used password. • User experience during entry of the memorized secret. o Support copy and paste functionality in fields for entering memorized secrets, including passphrases. Intermittent Events Usability considerations for intermittent events include: • When users create and change memorized secrets: o Clearly communicate information on how to create and change memorized secrets. o Clearly communicate memorized secret requirements, as specified in Section 5.1.1. o Allow at least 64 characters in length to support the use of passphrases.\n\n[p025_c03] PDF page 25 (printed page 14):\nThis is particularly important following the rejection of a memorized secret on the above list as it discourages trivial modification of listed (and likely very weak) memorized secrets [Blacklists]. Verifiers SHALL implement a rate-limiting mechanism that effectively limits the number of failed authentication attempts that can be made on the subscriber’s account as described in Section 5.2.2. Verifiers SHOULD NOT impose other composition rules (e.g., requiring mixtures of different character types or prohibiting consecutively repeated characters) for memorized secrets. Verifiers SHOULD NOT require memorized secrets to be changed arbitrarily (e.g., periodically). However, verifiers SHALL force a change if there is evidence of compromise of the authenticator. Verifiers SHOULD permit claimants to use “paste” functionality when entering a memorized secret. This facilitates the use of password managers, which are widely used and in many cases increase the likelihood that users will choose stronger memorized secrets.\n\nQuestion: Do users need to change their password every month even when it has not leaked?\nAnswer:"
+        }
+      ],
+      "context_ids": [
+        "p065_c01",
+        "p064_c02",
+        "p025_c03"
+      ]
+    }
+  },
+  {
+    "query": {
+      "query_id": "q11",
+      "category": "document_specific",
+      "question": "What is the deadline for finishing an out-of-band authentication transaction?",
+      "gold_pdf_page": 29,
+      "critical_phrase": "invalid if not completed within 10 minutes",
+      "gold_chunk_ids": [
+        "p029_c03"
+      ],
+      "expected_answer": "The authentication is invalid if not completed within 10 minutes."
+    },
+    "rank_summary": {
+      "query_id": "q11",
+      "category": "document_specific",
+      "question": "What is the deadline for finishing an out-of-band authentication transaction?",
+      "gold_pdf_page": 29,
+      "baseline_rank": 6,
+      "reranked_rank": 1,
+      "promoted_into_top3": true,
+      "demoted_out_of_top3": false,
+      "missing_from_top10": false
+    },
+    "baseline": {
+      "answer": "The deadline for finishing an out-of-band authentication transaction depends on the specific conditions outlined in the passages. According to [p029_c02], if using a secure application like a smart phone, the verifier may send a push notification to the device, which the verifier then waits for the establishment of an authenticated protected channel and verifies the authenticator's identifying key. After successful authentication, the verifier transmits the authentication secret to the authenticator. However, the passage does not specify a strict deadline beyond this process; it emphasizes periodic reauthentication as described in [p021_c01]. Therefore, while there isn't a single, universal deadline mentioned, the process involves multiple steps including initial authentication and periodic reauthentication checks.",
+      "generation_ms": 5927.098749999914,
+      "input_tokens": 770,
+      "output_tokens": 149,
+      "hit_token_limit": false,
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a careful reading assistant. Answer only from the provided historical NIST passages.\nAnswer the specific question in 2 or 3 sentences, at most 80 words. Start with the direct answer.\nUse the specific rule for the question rather than an unrelated general rule. Include any relevant\nexception, numeric condition, or prohibition. Preserve the meaning of SHALL, SHOULD, and MAY.\nCite at least one supporting passage using its exact chunk ID in square brackets.\nIf the passages do not answer the question, say the supplied passages are insufficient.\nDo not invent facts or describe unrelated procedures."
+        },
+        {
+          "role": "user",
+          "content": "Passages:\n[p029_c02] PDF page 29 (printed page 18):\nIf out-of-band verification is to be made using a secure application, such as on a smart phone, the verifier MAY send a push notification to that device. The verifier then waits for the establishment of an authenticated protected channel and verifies the authenticator’s identifying key. The verifier SHALL NOT store the identifying key itself, but SHALL use a verification method (e.g., an approved hash function or proof of possession of the identifying key) to uniquely identify the authenticator. Once authenticated, the verifier transmits the authentication secret to the authenticator. Depending on the type of out-of-band authenticator, one of the following SHALL take place: • Transfer of secret to primary channel: The verifier MAY signal the device containing the subscriber’s authenticator to indicate readiness to authenticate. It SHALL then transmit a random secret to the out-of-band authenticator. The verifier SHALL then wait for the secret to be returned on the primary communication channel.\n\n[p050_c02] PDF page 50 (printed page 39):\nPrior to session expiration, the reauthentication time limit SHALL be extended by prompting the subscriber for the authentication factor(s) specified in Table 7-1. When a session has been terminated, due to a time-out or other action, the user SHALL be required to establish a new session by authenticating again. Table 7-1 - AAL Reauthentication Requirements AAL Requirement 1 Presentation of any one factor 2 Presentation of a memorized secret or biometric 3 Presentation of all factors Note: At AAL2, a memorized secret or biometric, and not a physical authenticator, is required because the session secret is something you have, and an additional authentication factor is required to continue the session. 7.2.1 Reauthentication from a Federation or Assertion When using a federation protocol as described in SP 800-63C, Section 5 to connect the CSP and RP, special considerations apply to session management and reauthentication.\n\n[p021_c01] PDF page 21 (printed page 10):\nWhen a biometric factor is used in authentication at AAL3, the verifier SHALL make a determination that the biometric sensor and subsequent processing meet the performance requirements stated in Section 5.2.3. 4.3.3 Reauthentication Periodic reauthentication of subscriber sessions SHALL be performed as described in Section 7.2. At AAL3, authentication of the subscriber SHALL be repeated at least once per 12 hours during an extended usage session, regardless of user activity, as described in Section 7.2. Reauthentication of the subscriber SHALL be repeated following any period of inactivity lasting 15 minutes or longer. Reauthentication SHALL use both authentication factors. The session SHALL be terminated (i.e., logged out) when either of these time limits is reached. The verifier MAY prompt the user to cause activity just before the inactivity timeout.\n\nQuestion: What is the deadline for finishing an out-of-band authentication transaction?\nAnswer:"
+        }
+      ],
+      "context_ids": [
+        "p029_c02",
+        "p050_c02",
+        "p021_c01"
+      ]
+    },
+    "reranked": {
+      "answer": "The deadline for completing an out-of-band authentication transaction is within 10 minutes according to the specified rules [p029_c03].",
+      "generation_ms": 2010.2712079997218,
+      "input_tokens": 778,
+      "output_tokens": 31,
+      "hit_token_limit": false,
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a careful reading assistant. Answer only from the provided historical NIST passages.\nAnswer the specific question in 2 or 3 sentences, at most 80 words. Start with the direct answer.\nUse the specific rule for the question rather than an unrelated general rule. Include any relevant\nexception, numeric condition, or prohibition. Preserve the meaning of SHALL, SHOULD, and MAY.\nCite at least one supporting passage using its exact chunk ID in square brackets.\nIf the passages do not answer the question, say the supplied passages are insufficient.\nDo not invent facts or describe unrelated procedures."
+        },
+        {
+          "role": "user",
+          "content": "Passages:\n[p029_c03] PDF page 29 (printed page 18):\nIt SHALL then transmit a random secret to the out-of-band authenticator. The verifier SHALL then wait for the secret to be returned on the primary communication channel. • Transfer of secret to secondary channel: The verifier SHALL display a random authentication secret to the claimant via the primary channel. It SHALL then wait for the secret to be returned on the secondary channel from the claimant’s out-of-band authenticator. • Verification of secrets by claimant: The verifier SHALL display a random authentication secret to the claimant via the primary channel, and SHALL send the same secret to the out-of-band authenticator via the secondary channel for presentation to the claimant. It SHALL then wait for an approval (or disapproval) message via the secondary channel. In all cases, the authentication SHALL be considered invalid if not completed within 10 minutes. In order to provide replay resistance as described in Section 5.2.8, verifiers SHALL accept a given authentication secret only once during the validity period.\n\n[p029_c02] PDF page 29 (printed page 18):\nIf out-of-band verification is to be made using a secure application, such as on a smart phone, the verifier MAY send a push notification to that device. The verifier then waits for the establishment of an authenticated protected channel and verifies the authenticator’s identifying key. The verifier SHALL NOT store the identifying key itself, but SHALL use a verification method (e.g., an approved hash function or proof of possession of the identifying key) to uniquely identify the authenticator. Once authenticated, the verifier transmits the authentication secret to the authenticator. Depending on the type of out-of-band authenticator, one of the following SHALL take place: • Transfer of secret to primary channel: The verifier MAY signal the device containing the subscriber’s authenticator to indicate readiness to authenticate. It SHALL then transmit a random secret to the out-of-band authenticator. The verifier SHALL then wait for the secret to be returned on the primary communication channel.\n\n[p029_c01] PDF page 29 (printed page 18):\n• The authenticator SHALL accept transfer of the secret from the primary channel which it SHALL send to the verifier over the secondary channel to associate the approval with the authentication transaction. The claimant MAY perform the transfer manually or use a technology such as a barcode or QR code to effect the transfer. • The authenticator SHALL present a secret received via the secondary channel from the verifier and prompt the claimant to verify the consistency of that secret with the primary channel, prior to accepting a yes/no response from the claimant. It SHALL then send that response to the verifier. 5.1.3.2 Out-of-Band Verifiers For additional verification requirements specific to the PSTN, see Section 5.1.3.3. If out-of-band verification is to be made using a secure application, such as on a smart phone, the verifier MAY send a push notification to that device.\n\nQuestion: What is the deadline for finishing an out-of-band authentication transaction?\nAnswer:"
+        }
+      ],
+      "context_ids": [
+        "p029_c03",
+        "p029_c02",
+        "p029_c01"
+      ]
+    }
+  },
+  {
+    "query": {
+      "query_id": "q06",
+      "category": "exceptions",
+      "question": "Can several blank spaces in a passphrase be collapsed, and what length must remain?",
+      "gold_pdf_page": 24,
+      "critical_phrase": "provided that the result is at least 8 characters",
+      "gold_chunk_ids": [
+        "p024_c03"
+      ],
+      "expected_answer": "Consecutive spaces may become one only if the result is at least 8 characters; no truncation."
+    },
+    "rank_summary": {
+      "query_id": "q06",
+      "category": "exceptions",
+      "question": "Can several blank spaces in a passphrase be collapsed, and what length must remain?",
+      "gold_pdf_page": 24,
+      "baseline_rank": 6,
+      "reranked_rank": 1,
+      "promoted_into_top3": true,
+      "demoted_out_of_top3": false,
+      "missing_from_top10": false
+    },
+    "baseline": {
+      "answer": "Several blank spaces in a passphrase can be collapsed, but the remaining length must be sufficient to maintain the intended phrase's integrity. According to the passage, \"Users' password choices are very predictable,\" which means that collapsing multiple spaces could potentially lead to confusion or misuse of the passphrase. Therefore, the remaining length after collapsing spaces should ensure that the original intent of the passphrase remains clear and usable.",
+      "generation_ms": 3616.947916999834,
+      "input_tokens": 621,
+      "output_tokens": 79,
+      "hit_token_limit": false,
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a careful reading assistant. Answer only from the provided historical NIST passages.\nAnswer the specific question in 2 or 3 sentences, at most 80 words. Start with the direct answer.\nUse the specific rule for the question rather than an unrelated general rule. Include any relevant\nexception, numeric condition, or prohibition. Preserve the meaning of SHALL, SHOULD, and MAY.\nCite at least one supporting passage using its exact chunk ID in square brackets.\nIf the passages do not answer the question, say the supplied passages are insufficient.\nDo not invent facts or describe unrelated procedures."
+        },
+        {
+          "role": "user",
+          "content": "Passages:\n[p079_c03] PDF page 79 (printed page 68):\nBut a properly hashed password would not be sent intact to a database in any case, so such precautions are unnecessary. Users should also be able to include space characters to allow the use of phrases. Spaces themselves, however, add little to the complexity of passwords and may introduce usability issues (e.g., the undetected use of two spaces rather than one), so it may be beneficial to remove repeated spaces in typed passwords prior to verification. Users’ password choices are very predictable, so attackers are likely to guess passwords that have been successful in the past. These include dictionary words and passwords from previous breaches, such as the “Password1!” example above. For this reason, it is recommended that passwords chosen by users be compared against a “black list” of unacceptable passwords. This list should include passwords from previous breach corpuses, dictionary words, and specific words (such as the name of the service itself) that users are likely to choose.\n\n[p064_c03] PDF page 64 (printed page 53):\nEncourage users to make memorized secrets as lengthy as they want, using any characters they like (including spaces), thus aiding memorization. o Do not impose other composition rules (e.g. mixtures of different character types) on memorized secrets.\n\n[p079_c02] PDF page 79 (printed page 68):\nResearch has shown, however, that users respond in very predictable ways to the requirements imposed by composition rules [Policies]. For example, a user that might have chosen “password” as their password would be relatively likely to choose “Password1” if required to include an uppercase letter and a number, or “Password1!” if a symbol is also required. Users also express frustration when attempts to create complex passwords are rejected by online services. Many services reject passwords with spaces and various special characters. In some cases, the special characters that are not accepted might be an effort to avoid attacks like SQL injection that depend on those characters. But a properly hashed password would not be sent intact to a database in any case, so such precautions are unnecessary. Users should also be able to include space characters to allow the use of phrases.\n\nQuestion: Can several blank spaces in a passphrase be collapsed, and what length must remain?\nAnswer:"
+        }
+      ],
+      "context_ids": [
+        "p079_c03",
+        "p064_c03",
+        "p079_c02"
+      ]
+    },
+    "reranked": {
+      "answer": "According to the given passages, verifiers MAY replace multiple consecutive space characters with a single space character prior to verification, but truncation of the secret SHALL NOT be performed. The minimum required length for a memorized secret remains at least 64 characters, which supports the use of passphrases.",
+      "generation_ms": 3192.4602500002948,
+      "input_tokens": 817,
+      "output_tokens": 61,
+      "hit_token_limit": false,
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a careful reading assistant. Answer only from the provided historical NIST passages.\nAnswer the specific question in 2 or 3 sentences, at most 80 words. Start with the direct answer.\nUse the specific rule for the question rather than an unrelated general rule. Include any relevant\nexception, numeric condition, or prohibition. Preserve the meaning of SHALL, SHOULD, and MAY.\nCite at least one supporting passage using its exact chunk ID in square brackets.\nIf the passages do not answer the question, say the supplied passages are insufficient.\nDo not invent facts or describe unrelated procedures."
+        },
+        {
+          "role": "user",
+          "content": "Passages:\n[p024_c03] PDF page 24 (printed page 13):\nVerifiers SHOULD permit subscriber-chosen memorized secrets at least 64 characters in length. All printing ASCII [RFC 20] characters as well as the space character SHOULD be acceptable in memorized secrets. Unicode [ISO/ISC 10646] characters SHOULD be accepted as well. To make allowances for likely mistyping, verifiers MAY replace multiple consecutive space characters with a single space character prior to verification, provided that the result is at least 8 characters in length. Truncation of the secret SHALL NOT be performed. For purposes of the above length requirements, each Unicode code point SHALL be counted as a single character. If Unicode characters are accepted in memorized secrets, the verifier SHOULD apply the Normalization Process for Stabilized Strings using either the NFKC or NFKD normalization defined in Section 12.1 of Unicode Standard Annex 15 [UAX 15]. This process is applied before hashing the byte string representing the memorized secret.\n\n[p064_c02] PDF page 64 (printed page 53):\n10.2.1 Memorized Secrets Typical Usage Users manually input the memorized secret (commonly referred to as a password or PIN). Usability considerations for typical usage include: • Memorability of the memorized secret. o The likelihood of recall failure increases as there are more items for users to remember. With fewer memorized secrets, users can more easily recall the specific memorized secret needed for a particular RP. o The memory burden is greater for a less frequently used password. • User experience during entry of the memorized secret. o Support copy and paste functionality in fields for entering memorized secrets, including passphrases. Intermittent Events Usability considerations for intermittent events include: • When users create and change memorized secrets: o Clearly communicate information on how to create and change memorized secrets. o Clearly communicate memorized secret requirements, as specified in Section 5.1.1. o Allow at least 64 characters in length to support the use of passphrases.\n\n[p079_c01] PDF page 79 (printed page 68):\nwith a random value and hashed, preferably using a computationally expensive algorithm. Even with such measures, the current ability of attackers to compute many billions of hashes per second with no rate limiting requires passwords intended to resist such attacks to be orders of magnitude more complex than those that are expected to resist only online attacks. Users should be encouraged to make their passwords as lengthy as they want, within reason. Since the size of a hashed password is independent of its length, there is no reason not to permit the use of lengthy passwords (or pass phrases) if the user wishes. Extremely long passwords (perhaps megabytes in length) could conceivably require excessive processing time to hash, so it is reasonable to have some limit. A.3 Complexity As noted above, composition rules are commonly used in an attempt to increase the difficulty of guessing user-chosen passwords. Research has shown, however, that users respond in very predictable ways to the requirements imposed by composition rules [Policies].\n\nQuestion: Can several blank spaces in a passphrase be collapsed, and what length must remain?\nAnswer:"
+        }
+      ],
+      "context_ids": [
+        "p024_c03",
+        "p064_c02",
+        "p079_c01"
+      ]
+    }
+  },
+  {
+    "query": {
+      "query_id": "q13",
+      "category": "exceptions",
+      "question": "Does the general limit of 100 wrong guesses also allow 100 failed fingerprint scans?",
+      "gold_pdf_page": 38,
+      "critical_phrase": "or 10 consecutive failed attempts if PAD",
+      "gold_chunk_ids": [
+        "p038_c02"
+      ],
+      "expected_answer": "No; biometric-specific limits are 5, or 10 with qualifying PAD, followed by specified mitigation."
+    },
+    "rank_summary": {
+      "query_id": "q13",
+      "category": "exceptions",
+      "question": "Does the general limit of 100 wrong guesses also allow 100 failed fingerprint scans?",
+      "gold_pdf_page": 38,
+      "baseline_rank": 5,
+      "reranked_rank": 2,
+      "promoted_into_top3": true,
+      "demoted_out_of_top3": false,
+      "missing_from_top10": false
+    },
+    "baseline": {
+      "answer": "No, the general limit of 100 wrong guesses does not apply to fingerprint scans. According to [p036_c04], the verifier shall limit consecutive failed authentication attempts on a single account to no more than 100, but this is specifically for other types of authenticators like passwords or tokens, not for fingerprint scans.",
+      "generation_ms": 3067.4740840004233,
+      "input_tokens": 520,
+      "output_tokens": 72,
+      "hit_token_limit": false,
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a careful reading assistant. Answer only from the provided historical NIST passages.\nAnswer the specific question in 2 or 3 sentences, at most 80 words. Start with the direct answer.\nUse the specific rule for the question rather than an unrelated general rule. Include any relevant\nexception, numeric condition, or prohibition. Preserve the meaning of SHALL, SHOULD, and MAY.\nCite at least one supporting passage using its exact chunk ID in square brackets.\nIf the passages do not answer the question, say the supplied passages are insufficient.\nDo not invent facts or describe unrelated procedures."
+        },
+        {
+          "role": "user",
+          "content": "Passages:\n[p036_c04] PDF page 36 (printed page 25):\nUnless otherwise specified in the description of a given authenticator, the verifier SHALL limit consecutive failed authentication attempts on a single account to no more than 100.\n\n[p071_c01] PDF page 71 (printed page 60):\n• Ideally, users can select the modality they are most comfortable with for their second authentication factor. The user population may be more comfortable and familiar with — and accepting of — some biometric modalities than others. • User experience with biometrics as an activation factor. o Provide clear, meaningful feedback on the number of remaining allowed attempts. For example, for rate limiting (i.e., throttling), inform users of the time period they have to wait until next attempt to reduce user confusion and frustration. • Fingerprint Usability Considerations: o Users have to remember which finger(s) they used for initial enrollment. o The amount of moisture on the finger(s) affects the sensor’s ability for successful capture. o Additional factors influencing fingerprint capture quality include age, gender, and occupation (e.g., users handling chemicals or working extensively with their hands may have degraded friction ridges).\n\n[p071_c03] PDF page 71 (printed page 60):\nFingerprint authentication will be difficult for users with degraded fingerprints. • The time elapsed between the time of facial recognition for authentication and the time of the initial enrollment can affect recognition accuracy as a user’s face changes naturally over time. A user’s weight change may also be a factor. • Iris recognition may not work for people who had eye surgery, unless they re-enroll. Across all biometric modalities, usability considerations for intermittent events include:\n\nQuestion: Does the general limit of 100 wrong guesses also allow 100 failed fingerprint scans?\nAnswer:"
+        }
+      ],
+      "context_ids": [
+        "p036_c04",
+        "p071_c01",
+        "p071_c03"
+      ]
+    },
+    "reranked": {
+      "answer": "No, the general limit of 100 wrong guesses does not apply to fingerprint scans specifically. According to [p036_c04], unless otherwise specified in the description of a given authenticator, the verifier SHALL limit consecutive failed authentication attempts on a single account to no more than 100. This applies to all types of authentication methods, including fingerprints. Therefore, while there might be additional restrictions based on the specific implementation details, the general limit of 100 wrong guesses does not directly translate to a separate limit for fingerprint scans.",
+      "generation_ms": 4751.269416000014,
+      "input_tokens": 640,
+      "output_tokens": 114,
+      "hit_token_limit": false,
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a careful reading assistant. Answer only from the provided historical NIST passages.\nAnswer the specific question in 2 or 3 sentences, at most 80 words. Start with the direct answer.\nUse the specific rule for the question rather than an unrelated general rule. Include any relevant\nexception, numeric condition, or prohibition. Preserve the meaning of SHALL, SHOULD, and MAY.\nCite at least one supporting passage using its exact chunk ID in square brackets.\nIf the passages do not answer the question, say the supplied passages are insufficient.\nDo not invent facts or describe unrelated procedures."
+        },
+        {
+          "role": "user",
+          "content": "Passages:\n[p036_c04] PDF page 36 (printed page 25):\nUnless otherwise specified in the description of a given authenticator, the verifier SHALL limit consecutive failed authentication attempts on a single account to no more than 100.\n\n[p038_c02] PDF page 38 (printed page 27):\nTesting of presentation attack resistance SHALL be in accordance with Clause 12 of ISO/IEC 30107-3. The PAD decision MAY be made either locally on the claimant’s device or by a central verifier. Note: PAD is being considered as a mandatory requirement in future editions of this guideline. The biometric system SHALL allow no more than 5 consecutive failed authentication attempts or 10 consecutive failed attempts if PAD meeting the above requirements is implemented. Once that limit has been reached, the biometric authenticator SHALL either: • Impose a delay of at least 30 seconds before the next attempt, increasing exponentially with each successive attempt (e.g., 1 minute before the following failed attempt, 2 minutes before the second following attempt), or • Disable the biometric user authentication and offer another factor (e.g., a different biometric modality or a PIN/Passcode if it is not already a required factor) if such an alternative method is already available.\n\n[p037_c02] PDF page 37 (printed page 26):\nWhen the subscriber successfully authenticates, the verifier SHOULD disregard any previous failed attempts for that user from the same IP address. 5.2.3 Use of Biometrics The use of biometrics (something you are) in authentication includes both measurement of physical characteristics (e.g., fingerprint, iris, facial characteristics) and behavioral characteristics (e.g., typing cadence). Both classes are considered biometric modalities, although different modalities may differ in the extent to which they establish authentication intent as described in Section 5.2.9. For a variety of reasons, this document supports only limited use of biometrics for authentication. These reasons include: • The biometric False Match Rate (FMR) does not provide confidence in the authentication of the subscriber by itself. In addition, FMR does not account for spoofing attacks. • Biometric comparison is probabilistic, whereas the other authentication factors are deterministic.\n\nQuestion: Does the general limit of 100 wrong guesses also allow 100 failed fingerprint scans?\nAnswer:"
+        }
+      ],
+      "context_ids": [
+        "p036_c04",
+        "p038_c02",
+        "p037_c02"
+      ]
+    }
+  },
+  {
+    "query": {
+      "query_id": "q29",
+      "category": "exceptions",
+      "question": "Can a passphrase with repeated spaces be normalized even though truncation is prohibited?",
+      "gold_pdf_page": 24,
+      "critical_phrase": "provided that the result is at least 8 characters",
+      "gold_chunk_ids": [
+        "p024_c03"
+      ],
+      "expected_answer": "Space collapsing is permitted provided the result is at least 8 characters; truncation remains prohibited."
+    },
+    "rank_summary": {
+      "query_id": "q29",
+      "category": "exceptions",
+      "question": "Can a passphrase with repeated spaces be normalized even though truncation is prohibited?",
+      "gold_pdf_page": 24,
+      "baseline_rank": 4,
+      "reranked_rank": 1,
+      "promoted_into_top3": true,
+      "demoted_out_of_top3": false,
+      "missing_from_top10": false
+    },
+    "baseline": {
+      "answer": "Yes, a passphrase with repeated spaces can be normalized because truncation is prohibited according to the passage [p079_c02], which states \"Users should also be able to include space characters to allow the use of phrases.\" Therefore, repeating spaces does not violate this restriction.",
+      "generation_ms": 2751.293208000334,
+      "input_tokens": 620,
+      "output_tokens": 58,
+      "hit_token_limit": false,
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a careful reading assistant. Answer only from the provided historical NIST passages.\nAnswer the specific question in 2 or 3 sentences, at most 80 words. Start with the direct answer.\nUse the specific rule for the question rather than an unrelated general rule. Include any relevant\nexception, numeric condition, or prohibition. Preserve the meaning of SHALL, SHOULD, and MAY.\nCite at least one supporting passage using its exact chunk ID in square brackets.\nIf the passages do not answer the question, say the supplied passages are insufficient.\nDo not invent facts or describe unrelated procedures."
+        },
+        {
+          "role": "user",
+          "content": "Passages:\n[p079_c03] PDF page 79 (printed page 68):\nBut a properly hashed password would not be sent intact to a database in any case, so such precautions are unnecessary. Users should also be able to include space characters to allow the use of phrases. Spaces themselves, however, add little to the complexity of passwords and may introduce usability issues (e.g., the undetected use of two spaces rather than one), so it may be beneficial to remove repeated spaces in typed passwords prior to verification. Users’ password choices are very predictable, so attackers are likely to guess passwords that have been successful in the past. These include dictionary words and passwords from previous breaches, such as the “Password1!” example above. For this reason, it is recommended that passwords chosen by users be compared against a “black list” of unacceptable passwords. This list should include passwords from previous breach corpuses, dictionary words, and specific words (such as the name of the service itself) that users are likely to choose.\n\n[p079_c02] PDF page 79 (printed page 68):\nResearch has shown, however, that users respond in very predictable ways to the requirements imposed by composition rules [Policies]. For example, a user that might have chosen “password” as their password would be relatively likely to choose “Password1” if required to include an uppercase letter and a number, or “Password1!” if a symbol is also required. Users also express frustration when attempts to create complex passwords are rejected by online services. Many services reject passwords with spaces and various special characters. In some cases, the special characters that are not accepted might be an effort to avoid attacks like SQL injection that depend on those characters. But a properly hashed password would not be sent intact to a database in any case, so such precautions are unnecessary. Users should also be able to include space characters to allow the use of phrases.\n\n[p064_c03] PDF page 64 (printed page 53):\nEncourage users to make memorized secrets as lengthy as they want, using any characters they like (including spaces), thus aiding memorization. o Do not impose other composition rules (e.g. mixtures of different character types) on memorized secrets.\n\nQuestion: Can a passphrase with repeated spaces be normalized even though truncation is prohibited?\nAnswer:"
+        }
+      ],
+      "context_ids": [
+        "p079_c03",
+        "p079_c02",
+        "p064_c03"
+      ]
+    },
+    "reranked": {
+      "answer": "Yes, according to the passage, if Unicode characters are accepted in memorized secrets, the verifier SHOULD apply the Normalization Process for Stabilized Strings using either the NFKC or NFKD normalization defined in Section 12.1 of Unicode Standard Annex 15 [UAX 15], which applies before hashing the byte string representing the memorized secret. This allows for normalizing spaces without violating the prohibition against truncation.",
+      "generation_ms": 4055.9364160003497,
+      "input_tokens": 810,
+      "output_tokens": 91,
+      "hit_token_limit": false,
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a careful reading assistant. Answer only from the provided historical NIST passages.\nAnswer the specific question in 2 or 3 sentences, at most 80 words. Start with the direct answer.\nUse the specific rule for the question rather than an unrelated general rule. Include any relevant\nexception, numeric condition, or prohibition. Preserve the meaning of SHALL, SHOULD, and MAY.\nCite at least one supporting passage using its exact chunk ID in square brackets.\nIf the passages do not answer the question, say the supplied passages are insufficient.\nDo not invent facts or describe unrelated procedures."
+        },
+        {
+          "role": "user",
+          "content": "Passages:\n[p024_c03] PDF page 24 (printed page 13):\nVerifiers SHOULD permit subscriber-chosen memorized secrets at least 64 characters in length. All printing ASCII [RFC 20] characters as well as the space character SHOULD be acceptable in memorized secrets. Unicode [ISO/ISC 10646] characters SHOULD be accepted as well. To make allowances for likely mistyping, verifiers MAY replace multiple consecutive space characters with a single space character prior to verification, provided that the result is at least 8 characters in length. Truncation of the secret SHALL NOT be performed. For purposes of the above length requirements, each Unicode code point SHALL be counted as a single character. If Unicode characters are accepted in memorized secrets, the verifier SHOULD apply the Normalization Process for Stabilized Strings using either the NFKC or NFKD normalization defined in Section 12.1 of Unicode Standard Annex 15 [UAX 15]. This process is applied before hashing the byte string representing the memorized secret.\n\n[p079_c03] PDF page 79 (printed page 68):\nBut a properly hashed password would not be sent intact to a database in any case, so such precautions are unnecessary. Users should also be able to include space characters to allow the use of phrases. Spaces themselves, however, add little to the complexity of passwords and may introduce usability issues (e.g., the undetected use of two spaces rather than one), so it may be beneficial to remove repeated spaces in typed passwords prior to verification. Users’ password choices are very predictable, so attackers are likely to guess passwords that have been successful in the past. These include dictionary words and passwords from previous breaches, such as the “Password1!” example above. For this reason, it is recommended that passwords chosen by users be compared against a “black list” of unacceptable passwords. This list should include passwords from previous breach corpuses, dictionary words, and specific words (such as the name of the service itself) that users are likely to choose.\n\n[p064_c02] PDF page 64 (printed page 53):\n10.2.1 Memorized Secrets Typical Usage Users manually input the memorized secret (commonly referred to as a password or PIN). Usability considerations for typical usage include: • Memorability of the memorized secret. o The likelihood of recall failure increases as there are more items for users to remember. With fewer memorized secrets, users can more easily recall the specific memorized secret needed for a particular RP. o The memory burden is greater for a less frequently used password. • User experience during entry of the memorized secret. o Support copy and paste functionality in fields for entering memorized secrets, including passphrases. Intermittent Events Usability considerations for intermittent events include: • When users create and change memorized secrets: o Clearly communicate information on how to create and change memorized secrets. o Clearly communicate memorized secret requirements, as specified in Section 5.1.1. o Allow at least 64 characters in length to support the use of passphrases.\n\nQuestion: Can a passphrase with repeated spaces be normalized even though truncation is prohibited?\nAnswer:"
+        }
+      ],
+      "context_ids": [
+        "p024_c03",
+        "p079_c03",
+        "p064_c02"
+      ]
+    }
+  },
+  {
+    "query": {
+      "query_id": "q25",
+      "category": "keyword_trap",
+      "question": "Are a user's face and fingerprints secret in the same way as a password?",
+      "gold_pdf_page": 37,
+      "critical_phrase": "Biometric characteristics do not constitute secrets",
+      "gold_chunk_ids": [
+        "p037_c03"
+      ],
+      "expected_answer": "No; biometric characteristics can be captured or obtained without the user's knowledge."
+    },
+    "rank_summary": {
+      "query_id": "q25",
+      "category": "keyword_trap",
+      "question": "Are a user's face and fingerprints secret in the same way as a password?",
+      "gold_pdf_page": 37,
+      "baseline_rank": 1,
+      "reranked_rank": 5,
+      "promoted_into_top3": false,
+      "demoted_out_of_top3": true,
+      "missing_from_top10": false
+    },
+    "baseline": {
+      "answer": "No, a user's face and fingerprints are not considered secrets in the same way as a password. According to the passage [p037_c03], \"Biometric characteristics do not constitute secrets.\" This means that unlike passwords, which are typically kept secret and protected, biometric data like faces and fingerprints can be easily obtained through various means such as photographs or scans.",
+      "generation_ms": 3605.0418330000866,
+      "input_tokens": 749,
+      "output_tokens": 77,
+      "hit_token_limit": false,
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a careful reading assistant. Answer only from the provided historical NIST passages.\nAnswer the specific question in 2 or 3 sentences, at most 80 words. Start with the direct answer.\nUse the specific rule for the question rather than an unrelated general rule. Include any relevant\nexception, numeric condition, or prohibition. Preserve the meaning of SHALL, SHOULD, and MAY.\nCite at least one supporting passage using its exact chunk ID in square brackets.\nIf the passages do not answer the question, say the supplied passages are insufficient.\nDo not invent facts or describe unrelated procedures."
+        },
+        {
+          "role": "user",
+          "content": "Passages:\n[p037_c03] PDF page 37 (printed page 26):\nIn addition, FMR does not account for spoofing attacks. • Biometric comparison is probabilistic, whereas the other authentication factors are deterministic. • Biometric template protection schemes provide a method for revoking biometric credentials that is comparable to other authentication factors (e.g., PKI certificates and passwords). However, the availability of such solutions is limited, and standards for testing these methods are under development. • Biometric characteristics do not constitute secrets. They can be obtained online or by taking a picture of someone with a camera phone (e.g., facial images) with or without their knowledge, lifted from objects someone touches (e.g., latent fingerprints), or captured with high resolution images (e.g., iris patterns).\n\n[p071_c03] PDF page 71 (printed page 60):\nFingerprint authentication will be difficult for users with degraded fingerprints. • The time elapsed between the time of facial recognition for authentication and the time of the initial enrollment can affect recognition accuracy as a user’s face changes naturally over time. A user’s weight change may also be a factor. • Iris recognition may not work for people who had eye surgery, unless they re-enroll. Across all biometric modalities, usability considerations for intermittent events include:\n\n[p070_c01] PDF page 70 (printed page 59):\nUsability Consideration Memorized secrets Look-up Secrets Out of Band Single Factor OTP Device Multi-Factor OTP Device Single Factor Cryptographic Software Single Factor Cryptographic Device Multi-Factor Cryptographic Software Multi-Factor Cryptographic Device Physical input required (such as pressing a button)   Cryptographic keys need for descriptive and meaningful names    Complexity and size of the prompts  Authentication to secondary device to access the authentication secret  Continuous hardware connection not required  Intermittent Events Reauthentication due to user inactivity          Fixed periodic reauthentication          Provisions for technical assistance          Provisions to create and change memorized secrets  Biometrics Usability Considerations This section provides a high-level overview of general usability considerations for biometrics. A more detailed discussion of biometric usability can be found in Usability & Biometrics, Ensuring Successful Biometric Systems NIST Usability. Although there are other biometric modalities, the following three biometric modalities are more commonly used for authentication: fingerprint, face and iris.\n\nQuestion: Are a user's face and fingerprints secret in the same way as a password?\nAnswer:"
+        }
+      ],
+      "context_ids": [
+        "p037_c03",
+        "p071_c03",
+        "p070_c01"
+      ]
+    },
+    "reranked": {
+      "answer": "No, a user's face and fingerprints are not considered secrets in the same way as a password according to the given passages. Passwords are typically memorized and subject to change, while faces and fingerprints are biometric identifiers that are unique to individuals and cannot be forgotten or changed. The passages emphasize the limitations of human memory in remembering complex secrets and suggest alternative methods like password managers to enhance security without requiring constant changes.",
+      "generation_ms": 3913.182875000075,
+      "input_tokens": 746,
+      "output_tokens": 84,
+      "hit_token_limit": false,
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a careful reading assistant. Answer only from the provided historical NIST passages.\nAnswer the specific question in 2 or 3 sentences, at most 80 words. Start with the direct answer.\nUse the specific rule for the question rather than an unrelated general rule. Include any relevant\nexception, numeric condition, or prohibition. Preserve the meaning of SHALL, SHOULD, and MAY.\nCite at least one supporting passage using its exact chunk ID in square brackets.\nIf the passages do not answer the question, say the supplied passages are insufficient.\nDo not invent facts or describe unrelated procedures."
+        },
+        {
+          "role": "user",
+          "content": "Passages:\n[p025_c04] PDF page 25 (printed page 14):\nThis facilitates the use of password managers, which are widely used and in many cases increase the likelihood that users will choose stronger memorized secrets. In order to assist the claimant in successfully entering a memorized secret, the verifier SHOULD offer an option to display the secret — rather than a series of dots or asterisks — until it is entered. This allows the claimant to verify their entry if they are in a location where their screen is unlikely to be observed. The verifier MAY also permit the user’s device to display individual entered characters for a short time after each character is typed to verify correct entry. This is particularly applicable on mobile devices.\n\n[p078_c01] PDF page 78 (printed page 67):\nAppendix A—Strength of Memorized Secrets This appendix is informative. Throughout this appendix, the word “password” is used for ease of discussion. Where used, it should be interpreted to include passphrases and PINs as well as passwords. A.1 Introduction Despite widespread frustration with the use of passwords from both a usability and security standpoint, they remain a very widely used form of authentication [Persistence]. Humans, however, have only a limited ability to memorize complex, arbitrary secrets, so they often choose passwords that can be easily guessed. To address the resultant security concerns, online services have introduced rules in an effort to increase the complexity of these memorized secrets. The most notable form of these is composition rules, which require the user to choose passwords constructed using a mix of character types, such as at least one digit, uppercase letter, and symbol. However, analyses of breached password databases reveal that the benefit of such rules is not nearly as significant as initially thought [Policies], although the impact on usability and memorability is severe.\n\n[p065_c01] PDF page 65 (printed page 54):\no Do not require that memorized secrets be changed arbitrarily (e.g., periodically) unless there is a user request or evidence of authenticator compromise. (See Section 5.1.1 for additional information). • Provide clear, meaningful and actionable feedback when chosen passwords are rejected (e.g., when it appears on a “black list” of unacceptable passwords or has been used previously). 10.2.2 Look-Up Secrets Typical Usage Users use the authenticator — printed or electronic — to look up the appropriate secret(s) needed to respond to a verifier’s prompt. For example, a user may be asked to provide a specific subset of the numeric or character strings printed on a card in table format. Usability considerations for typical usage include: • User experience during entry of look-up secrets. o Consider the prompts’ complexities and sizes. The larger the subset of secrets a user is prompted to look up, the greater the usability implications.\n\nQuestion: Are a user's face and fingerprints secret in the same way as a password?\nAnswer:"
+        }
+      ],
+      "context_ids": [
+        "p025_c04",
+        "p078_c01",
+        "p065_c01"
+      ]
+    }
+  },
+  {
+    "query": {
+      "query_id": "q09",
+      "category": "negation",
+      "question": "Does a locked phone need to reveal the one-time login code on its screen?",
+      "gold_pdf_page": 28,
+      "critical_phrase": "SHOULD NOT display the authentication secret",
+      "gold_chunk_ids": [
+        "p028_c04"
+      ],
+      "expected_answer": "It SHOULD NOT display the secret while locked, but SHOULD indicate receipt."
+    },
+    "rank_summary": {
+      "query_id": "q09",
+      "category": "negation",
+      "question": "Does a locked phone need to reveal the one-time login code on its screen?",
+      "gold_pdf_page": 28,
+      "baseline_rank": 3,
+      "reranked_rank": 1,
+      "promoted_into_top3": false,
+      "demoted_out_of_top3": false,
+      "missing_from_top10": false
+    },
+    "baseline": {
+      "answer": "No, according to the passage [p020_c05], when a device like a smartphone is used in the authentication process, the unlocking of that device shall not be considered one of the authentication factors. Therefore, a locked phone does not need to reveal the one-time login code on its screen.",
+      "generation_ms": 2946.141834000173,
+      "input_tokens": 645,
+      "output_tokens": 63,
+      "hit_token_limit": false,
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a careful reading assistant. Answer only from the provided historical NIST passages.\nAnswer the specific question in 2 or 3 sentences, at most 80 words. Start with the direct answer.\nUse the specific rule for the question rather than an unrelated general rule. Include any relevant\nexception, numeric condition, or prohibition. Preserve the meaning of SHALL, SHOULD, and MAY.\nCite at least one supporting passage using its exact chunk ID in square brackets.\nIf the passages do not answer the question, say the supplied passages are insufficient.\nDo not invent facts or describe unrelated procedures."
+        },
+        {
+          "role": "user",
+          "content": "Passages:\n[p020_c05] PDF page 20 (printed page 9):\nRelevant side-channel attacks SHALL be determined by a risk assessment performed by the CSP. When a device such a smartphone is used in the authentication process — presuming that the device is able to meet the requirements above — the unlocking of that device SHALL NOT be considered to satisfy one of the authentication factors. This is because it is generally not possible for verifier to know that the device had been locked nor whether the unlock process met the requirements for the relevant authenticator type.\n\n[p019_c01] PDF page 19 (printed page 8):\nWhen a device such as a smartphone is used in the authentication process, the unlocking of that device (typically done using a PIN or biometric) SHALL NOT be considered one of the authentication factors. Generally, it is not possible for a verifier to know that the device had been locked or if the unlock process met the requirements for the relevant authenticator type. When a biometric factor is used in authentication at AAL2, the performance requirements stated in Section 5.2.3 SHALL be met, and the verifier SHOULD make a determination that the biometric sensor and subsequent processing meet these requirements. 4.2.3 Reauthentication Periodic reauthentication of subscriber sessions SHALL be performed as described in Section 7.2. At AAL2, authentication of the subscriber SHALL be repeated at least once per 12 hours during an extended usage session, regardless of user activity. Reauthentication of the subscriber SHALL be repeated following any period of inactivity lasting 30 minutes or longer.\n\n[p028_c04] PDF page 28 (printed page 17):\nThis method SHALL only be used if a secret is being sent from the verifier to the out-of-band device via the PSTN (SMS or voice). If a secret is sent by the verifier to the out-of-band device, the device SHOULD NOT display the authentication secret while it is locked by the owner (i.e., requires an entry of a PIN, passcode, or biometric to view). However, authenticators SHOULD indicate the receipt of an authentication secret on a locked device. If the out-of-band authenticator sends an approval message over the secondary communication channel — rather than by the claimant transferring a received secret to the primary communication channel — it SHALL do one of the following:\n\nQuestion: Does a locked phone need to reveal the one-time login code on its screen?\nAnswer:"
+        }
+      ],
+      "context_ids": [
+        "p020_c05",
+        "p019_c01",
+        "p028_c04"
+      ]
+    },
+    "reranked": {
+      "answer": "A locked phone does not need to reveal the one-time login code on its screen according to the first passage [p028_c04]. The passage states that if a secret is sent by the verifier to the out-of-band device, the device SHOULD NOT display the authentication secret while it is locked by the owner. Therefore, even though the phone might be locked, the secret itself would not appear on the screen.",
+      "generation_ms": 3955.766125000082,
+      "input_tokens": 756,
+      "output_tokens": 86,
+      "hit_token_limit": false,
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a careful reading assistant. Answer only from the provided historical NIST passages.\nAnswer the specific question in 2 or 3 sentences, at most 80 words. Start with the direct answer.\nUse the specific rule for the question rather than an unrelated general rule. Include any relevant\nexception, numeric condition, or prohibition. Preserve the meaning of SHALL, SHOULD, and MAY.\nCite at least one supporting passage using its exact chunk ID in square brackets.\nIf the passages do not answer the question, say the supplied passages are insufficient.\nDo not invent facts or describe unrelated procedures."
+        },
+        {
+          "role": "user",
+          "content": "Passages:\n[p028_c04] PDF page 28 (printed page 17):\nThis method SHALL only be used if a secret is being sent from the verifier to the out-of-band device via the PSTN (SMS or voice). If a secret is sent by the verifier to the out-of-band device, the device SHOULD NOT display the authentication secret while it is locked by the owner (i.e., requires an entry of a PIN, passcode, or biometric to view). However, authenticators SHOULD indicate the receipt of an authentication secret on a locked device. If the out-of-band authenticator sends an approval message over the secondary communication channel — rather than by the claimant transferring a received secret to the primary communication channel — it SHALL do one of the following:\n\n[p065_c02] PDF page 65 (printed page 54):\nThe larger the subset of secrets a user is prompted to look up, the greater the usability implications. Both the cognitive workload and physical difficulty for entry should be taken into account when selecting the quantity and complexity of look-up secrets for authentication. 10.2.3 Out-of-Band Typical Usage Out-of-band authentication requires users have access to a primary and secondary communication channel. Usability considerations for typical usage: • Notify users of the receipt of a secret on a locked device. However, if the out of band device is locked, authentication to the device should be required to access the secret. • Depending on the implementation, consider form-factor constraints as they are particularly problematic when users must enter text on mobile devices. Providing larger touch areas will improve usability for entering secrets on mobile devices. • A better usability option is to offer features that do not require text entry on mobile devices (e.g., a single tap on the screen, or a copy feature so users can copy and paste out- of-band secrets).\n\n[p019_c01] PDF page 19 (printed page 8):\nWhen a device such as a smartphone is used in the authentication process, the unlocking of that device (typically done using a PIN or biometric) SHALL NOT be considered one of the authentication factors. Generally, it is not possible for a verifier to know that the device had been locked or if the unlock process met the requirements for the relevant authenticator type. When a biometric factor is used in authentication at AAL2, the performance requirements stated in Section 5.2.3 SHALL be met, and the verifier SHOULD make a determination that the biometric sensor and subsequent processing meet these requirements. 4.2.3 Reauthentication Periodic reauthentication of subscriber sessions SHALL be performed as described in Section 7.2. At AAL2, authentication of the subscriber SHALL be repeated at least once per 12 hours during an extended usage session, regardless of user activity. Reauthentication of the subscriber SHALL be repeated following any period of inactivity lasting 30 minutes or longer.\n\nQuestion: Does a locked phone need to reveal the one-time login code on its screen?\nAnswer:"
+        }
+      ],
+      "context_ids": [
+        "p028_c04",
+        "p065_c02",
+        "p019_c01"
+      ]
+    }
+  }
+]
